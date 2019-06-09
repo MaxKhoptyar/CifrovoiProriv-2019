@@ -1,0 +1,39 @@
+﻿@using Extentions
+@using TheHermesEntities.Common
+@model TheHermes.Models.NotificationUserModel
+
+@foreach (var n in Model.Notification)
+{
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <label>Тип проблемы : @Model.Claims[n.ClaimId].TypeId.DescriptionAttr()</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-label-group">
+                    <label>Сообщение : @Model.Claims[n.ClaimId].Message</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <label>Статус : @Model.Claims[n.ClaimId].StatusId.DescriptionAttr()</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-label-group">
+                    <label>Дата: @n.Date.ToShortDateString()</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                @if (n.NotificationType == (int)NotificationType.NotificationAddVoice)
+                {
+                    <div class="form-label-group">
+                        <button type="button" onclick="CollaborateClaimAction(@n.ClaimId)" class="btn btn-default btn-block btn-outline-primary">Поддержать</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,46 @@
+﻿@using Extentions
+@using TheHermesEntities
+@model TheHermes.Models.MarkedClaimsUserModel
+
+
+@foreach (var c in Model.ClaimInfo)
+{
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <label>Тип проблемы : @c.TypeId.DescriptionAttr()</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-label-group">
+                    <label>Сообщение : @c.Message</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <label>Статус : @c.StatusId.DescriptionAttr()</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-label-group">
+                    <label>Дата: @c.DateTimeUpdate.ToShortDateString()</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                @if (c.StatusId == ClaimLifeStatus.Evaluation)
+                {
+                    <div class="form-label-group">
+                        <button type="button" onclick="RatingClaimAction(@c.ClaimId)" class="btn btn-default btn-block btn-outline-primary">Поставить оенку</button>
+                    </div>
+                }
+                @if (c.StatusId == ClaimLifeStatus.Execution || c.StatusId == ClaimLifeStatus.InWork || c.StatusId == ClaimLifeStatus.Submission)
+                {
+                    <div class="form-label-group">
+                        <button type="button" onclick="CollaborateClaimAction(@c.ClaimId)" class="btn btn-default btn-block btn-outline-primary">Подтвердить</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

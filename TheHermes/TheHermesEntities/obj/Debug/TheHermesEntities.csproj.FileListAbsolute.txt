@@ -1,0 +1,10 @@
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\bin\Debug\TheHermesEntities.dll.config
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\bin\Debug\TheHermesEntities.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\bin\Debug\TheHermesEntities.pdb
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\bin\Debug\EntityFramework.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\bin\Debug\EntityFramework.xml
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\obj\Debug\TheHermesEntities.csprojResolveAssemblyReference.cache
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\obj\Debug\TheHermesEntities.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\TheHermesEntities\obj\Debug\TheHermesEntities.pdb

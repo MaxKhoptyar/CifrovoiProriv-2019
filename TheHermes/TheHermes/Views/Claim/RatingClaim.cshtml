@@ -1,0 +1,43 @@
+﻿@using Extentions
+@model TheHermes.Models.RatingClaimFormModel
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-4">
+        <label>Тип проблемы</label>
+        <label>@Model.ClaimInfo.TypeId.DescriptionAttr()</label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-4">
+        <label>Дата последнего редактирования</label>
+        <label>@Model.ClaimInfo.DateTimeUpdate.ToShortDateString()</label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-4">
+        <label>Дополнительное описание</label>
+        <label>@Model.ClaimInfo.Message</label>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-4">
+        <label>Выбранная оценка</label>
+        <select class="form-control" id="ratingSelect">
+            @foreach (var e in Model.Rating)
+            {
+                <option value="@e.Id">@e.Name</option>
+            }
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-4">
+        <label>Сопроводительное сообщение</label>
+        <textarea class="form-control" id="accompanyingMessage" rows="3"></textarea>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-4">
+        <button type="button" onclick="CreateRatingClaim(@Model.ClaimInfo.ClaimId)" class="btn btn-outline-primary">Оценить работу компании</button>
+    </div>
+</div>

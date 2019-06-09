@@ -1,0 +1,40 @@
+﻿@model TheHermes.Models.MarkedClaimsOrganisationModel
+
+@using Extentions
+@using TheHermesEntities
+
+@foreach (var c in Model.ClaimInfo)
+{
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <label>Тип проблемы : @c.TypeId.DescriptionAttr()</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-label-group">
+                    <label>Сообщение : @c.Message</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <label>Статус : @c.StatusId.DescriptionAttr()</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-label-group">
+                    <label>Дата: @c.DateTimeUpdate.ToShortDateString()</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                @if (c.StatusId == ClaimLifeStatus.Execution || c.StatusId == ClaimLifeStatus.InWork || c.StatusId == ClaimLifeStatus.Submission)
+                {
+                    <div class="form-label-group">
+                        <button type="button" onclick="AnswerClaimAction(@c.ClaimId)" class="btn btn-default btn-block btn-outline-primary">Ответить на заявку</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

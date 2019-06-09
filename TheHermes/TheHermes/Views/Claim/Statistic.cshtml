@@ -1,0 +1,40 @@
+﻿@model TheHermes.Models.StatisticModel
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-chart-area"></i>
+        Статистика по компаниям
+    </div>
+    <div class="card-body">
+        <div class="chartjs-size-monitor">
+            <div class="chartjs-size-monitor-expand">
+                <div class=""></div>
+            </div>
+            <div class="chartjs-size-monitor-shrink">
+                <div class=""></div>
+            </div>
+        </div>
+        <canvas id="myChart"></canvas></div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
+
+<script type="text/javascript">
+
+		var tit1=['УК-1', 'УК-8', 'УК-88', 'УК-43', 'УК-21', 'УК-90', 'УК-33', 'УК-10', 'УК-80', 'УК-880', 'УК-430', 'УК-210', 'УК-900', 'УК-330'];
+		var dates=[8.66, 8.5, 8.3, 8.22, 8.15, 8.1, 7.45, 7.26, 7.1, 7.05, 7.03, 6.15, 6.1, 5.45];
+
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var chart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: tit1,
+				datasets: [{
+					label: 'Общий рейтинг',
+					backgroundColor: 'rgb(141, 180, 226)',
+					borderColor: 'rgb(141, 180, 226)',
+					data: dates
+				}]
+			},
+			options: {}
+		});
+</script>

@@ -1,0 +1,14 @@
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\DbWorker.dll.config
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\DbWorker.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\DbWorker.pdb
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\EntityFramework.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\TheHermesEntities.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\TheHermesEntities.pdb
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\EntityFramework.xml
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\obj\Debug\DbWorker.csprojResolveAssemblyReference.cache
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\obj\Debug\DbWorker.dll
+C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\obj\Debug\DbWorker.pdb

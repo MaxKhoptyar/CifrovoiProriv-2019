@@ -1,0 +1,30 @@
+﻿@using Extentions
+@model TheHermes.Models.AdministrationClaimModel
+
+@foreach (var e in Model.ClaimInfo)
+{
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <label>Тип проблемы : @e.TypeId.DescriptionAttr()</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <label>Статус : @e.StatusId.DescriptionAttr()</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <label>Дата последнего обновления : @e.DateTimeUpdate</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-label-group">
+                    <button type="button" onclick="WorkWithClaim(@e.ClaimId)" class="btn btn-default btn-block btn-outline-primary">Взять в работу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

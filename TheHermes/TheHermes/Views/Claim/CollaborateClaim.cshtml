@@ -1,0 +1,32 @@
+﻿@using Extentions
+@model TheHermes.Models.CollaborateClaimInfoModel
+
+@{
+    ViewBag.Title = "title";
+
+}
+<form>
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-4">
+            <label>Выбранный тип проблемы:</label>
+            <label>@Model.ClaimInfo.TypeId.DescriptionAttr()</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-4">
+            <label>Описание:        </label>
+            <label>@Model.ClaimInfo.Message</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-4">
+            <label>Сопроводительное письмо</label>
+            <textarea class="form-control" id="accompanyingMessage" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-4">
+            <button type="button" onclick="CollaborateClaim()" class="btn btn-outline-primary">Подтвердить заявку по проблеме</button>
+        </div>
+    </div>
+</form>

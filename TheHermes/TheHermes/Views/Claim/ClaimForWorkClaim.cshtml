@@ -1,0 +1,30 @@
+﻿@using Extentions
+@using TheHermesEntities
+@model TheHermes.Models.ClaimForWorkModel
+
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-6">
+        <label>Тип проблемы : @Model.ClaimInfo.TypeId.DescriptionAttr()</label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-6">
+        <label>Статус : @Model.ClaimInfo.StatusId.DescriptionAttr()</label>
+    </div>
+</div>
+@if (Model.ClaimInfo.StatusId == ClaimLifeStatus.Submission || Model.ClaimInfo.StatusId == ClaimLifeStatus.InWork || Model.ClaimInfo.StatusId == ClaimLifeStatus.Execution)
+{
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-6">
+            <button type="button" onclick="OpenRatingClaim(@Model.ClaimInfo.ClaimId)" class="btn btn-default btn-block btn-outline-primary">Открыть голосование</button>
+        </div>
+    </div>
+}
+@if (Model.ClaimInfo.StatusId == ClaimLifeStatus.Evaluation)
+{
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-6">
+            <button type="button" onclick="CloseRatingClaim(@Model.ClaimInfo.ClaimId)" class="btn btn-default btn-block btn-outline-primary">Завершить голосование</button>
+        </div>
+    </div>
+}
