@@ -1,0 +1,16 @@
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\DbWorker.dll.config
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\DbWorker.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\DbWorker.pdb
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\EntityFramework.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\EntityFramework.SqlServer.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\EPPlus.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\TheHermesEntities.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\TheHermesEntities.pdb
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\EntityFramework.xml
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\EntityFramework.SqlServer.xml
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\EPPlus.xml
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\obj\Release\DbWorker.csprojResolveAssemblyReference.cache
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\obj\Release\DbWorker.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\obj\Release\DbWorker.pdb

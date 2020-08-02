@@ -12,3 +12,19 @@ C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\bin\
 C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\obj\Debug\DbWorker.csprojResolveAssemblyReference.cache
 C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\obj\Debug\DbWorker.dll
 C:\Users\HoptjarMS\Documents\Visual Studio 2015\Projects\TheHermes\DbWorker\obj\Debug\DbWorker.pdb
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\DbWorker.dll.config
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\DbWorker.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\DbWorker.pdb
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\EntityFramework.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\EntityFramework.SqlServer.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\TheHermesEntities.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\TheHermesEntities.pdb
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\EntityFramework.xml
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\EntityFramework.SqlServer.xml
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\obj\Debug\DbWorker.csprojResolveAssemblyReference.cache
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\obj\Debug\DbWorker.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\obj\Debug\DbWorker.pdb
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\EPPlus.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\DbWorker\bin\Debug\EPPlus.xml

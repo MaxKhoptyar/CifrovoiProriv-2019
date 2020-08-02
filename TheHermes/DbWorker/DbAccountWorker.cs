@@ -10,7 +10,7 @@ using TheHermesEntities.Common;
 
 namespace DbWorker
 {
-    public class DbAccountWorker
+    public static class DbAccountWorker
     {
         public static UserModel Authorization(string user, string password)
         {

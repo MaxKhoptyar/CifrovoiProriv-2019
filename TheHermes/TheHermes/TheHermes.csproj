@@ -46,6 +46,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.3.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.1\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -79,9 +83,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -199,19 +205,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\NotificationController.cs" />
-    <Compile Include="Controllers\OrganisationController.cs" />
-    <Compile Include="Controllers\ClaimController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\NotificationViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\RegionModel.cs" />
+    <Compile Include="Models\MapModel.cs" />
     <Compile Include="Models\UserViewModels.cs" />
-    <Compile Include="Models\ClaimViewModels.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -225,10 +228,26 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\css\StyleSheet1.css" />
     <Content Include="Content\font-awesame-all.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\sb-admin.css" />
+    <Content Include="Content\img\logo-color.png" />
+    <Content Include="Content\img\map-def.png" />
+    <Content Include="Content\img\map1.png" />
+    <Content Include="Content\img\map2.png" />
+    <Content Include="Content\img\map3.png" />
+    <Content Include="Content\img\mapicon.png" />
+    <Content Include="Content\js\bootstrap-select.min.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\chart.js" />
+    <Content Include="Content\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\js\mapicon.png" />
+    <Content Include="Content\js\popper.min.js" />
+    <Content Include="Content\js\prefixfree.min.js" />
+    <Content Include="Content\js\script.js" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -260,6 +279,8 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\m.pubxml" />
+    <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -344,13 +365,14 @@
     <None Include="Views\Organisation\Index.cshtml" />
     <Content Include="Views\Shared\AccessDenied.cshtml" />
     <None Include="Views\Statistic\Index.cshtml" />
+    <None Include="Views\Statistic\Map.cshtml" />
+    <None Include="Views\Statistic\RealTime.cshtml" />
+    <None Include="Views\Statistic\Region.cshtml" />
     <None Include="Views\User\Index.cshtml" />
     <None Include="Views\User\UserInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\css\" />
-    <Folder Include="Content\js\" />
     <Folder Include="Content\vendor\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>

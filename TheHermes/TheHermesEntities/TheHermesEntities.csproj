@@ -55,35 +55,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Claim.cs" />
-    <Compile Include="Common\ClaimInfo.cs" />
-    <Compile Include="Common\ClaimLifeStatus.cs" />
-    <Compile Include="Common\ClaimType.cs" />
     <Compile Include="Common\CommonType.cs" />
-    <Compile Include="Common\CreateClaimResult.cs" />
+    <Compile Include="Common\MakeMoney.cs" />
+    <Compile Include="Common\StateOfMarriage.cs" />
+    <Compile Include="Common\Population.cs" />
     <Compile Include="Common\Extentions.cs" />
-    <Compile Include="Common\DisabledClassType.cs" />
+    <Compile Include="Common\RelationshipType.cs" />
     <Compile Include="Common\UpdateOrganisationResult.cs" />
-    <Compile Include="Common\NotoficationType.cs" />
-    <Compile Include="Common\RatingType.cs" />
     <Compile Include="Common\CreateUserInfoResult.cs" />
-    <Compile Include="Common\CreateRatingResult.cs" />
     <Compile Include="Common\UpdateUserInfoResult.cs" />
-    <Compile Include="Common\CreateOrganisationResult.cs" />
     <Compile Include="Common\RoleType.cs" />
+    <Compile Include="Common\Education.cs" />
     <Compile Include="Common\UserModel.cs" />
-    <Compile Include="StatisticRating.cs" />
-    <Compile Include="UserInfo.cs" />
-    <Compile Include="UserRole.cs" />
-    <Compile Include="OrganisationInfo.cs" />
-    <Compile Include="OrganisationAnswer.cs" />
-    <Compile Include="RatingRequest.cs" />
+    <Compile Include="Common\UserInfo.cs" />
+    <Compile Include="Common\UserRole.cs" />
     <Compile Include="TheHermesEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="ClaimUserCollaboration.cs" />
-    <Compile Include="UserNotification.cs" />
-    <Compile Include="UserOrganisation.cs" />
+    <Compile Include="Common\User.cs" />
+    <Compile Include="TheHermesInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

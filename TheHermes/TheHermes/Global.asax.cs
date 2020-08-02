@@ -8,6 +8,8 @@ using System.Web.Routing;
 using System.Web.Script.Serialization;
 using System.Web.Security;
 using CoreAuroraWeb.Models;
+using DbWorker;
+using TheHermesEntities;
 
 namespace TheHermes
 {
@@ -19,7 +21,50 @@ namespace TheHermes
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            LocalStorage.Education = DbStatisticWorker.GetEducations();
+            LocalStorage.MakeMoney = DbStatisticWorker.GetMakeMoney();
+            LocalStorage.Population = DbStatisticWorker.GetPopulations();
+            LocalStorage.StateOfMarriage = DbStatisticWorker.GetStateOfMarriages();
+            LocalStorage.DictionaryRegions = DbStatisticWorker.GetDictionary();
+
+            using (var context = new TheHermesEntities.TheHermesEntities())
+            {
+                if (!context.Population.Any())
+                {
+                    var e = DbStatisticWorker.GetPopulations();
+                    context.Population.AddRange(e);
+                    context.SaveChanges();
+                }
+            }
+            //    if (context.Education.Any())
+            //    {
+            //        var e = DbStatisticWorker.GetEducations();
+            //        var arr = e.ToArray();
+
+            //        for (int i = 0; i < 4; i++)
+            //        {
+            //            context.Education.Add(new Education());
+
+            //        }
+            //        context.SaveChanges();
+
+            //    }
+            //    if (!context.StateOfMarriage.Any())
+            //    {
+
+            //        context.StateOfMarriage.AddRange(e);
+            //        context.SaveChanges();
+            //    }
+            //    if (!context.MakeMoney.Any())
+            //    {
+            //        var e = DbStatisticWorker.GetMakeMoney();
+            //        context.MakeMoney.AddRange(e);
+            //        context.SaveChanges();
+            //    }
+            //}
         }
+
         protected void Application_End(object sender, EventArgs e)
         {
             //ScheduledTasksManager.Scheduler.Shutdown();

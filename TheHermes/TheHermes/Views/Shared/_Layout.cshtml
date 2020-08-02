@@ -4,178 +4,57 @@
 <head>
 
     <meta charset="utf-8">
-    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="~/Content/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/sb-admin.css" rel="stylesheet"/>
-
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-select.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="~/Scripts/jquery-3.4.1.js"></script>
-    <script src="~/Scripts/bootstrap.bundle.js"></script>
-    <script src="~/Scripts/jquery.easing.1.3.js"></script>
-    <script src="~/Scripts/Chart.js"></script>
-    <script src="~/Scripts/Common.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=afe0a3e4-7da8-49da-b591-c8fa103006a8&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body id="page-top">
-    @if (Request.IsAuthenticated)
-    {
-        <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-            <a class="navbar-brand mr-1" href="/Home/Index">The Hermes</a>
-
-            <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <!-- Navbar Search -->
-            <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-
-            </div>
-
-            <!-- Navbar -->
-            <ul class="navbar-nav ml-auto ml-md-0">
-                <li class="nav-item dropdown no-arrow mx-1">
-                    <a class="nav-link dropdown-toggle" onclick="NotificationIndex()" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-bell fa-fw"></i>
-                        <span id="notificationBadge" class="badge badge-danger"></span>
-                    </a>
-                </li>
-                <li class="nav-item dropdown no-arrow">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user-circle fa-fw"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="/User/GetUserInfo">Личный кабинет</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/Account/Logout">Выход</a>
-                        @*<a class="dropdown-item" href="/Account/Logout" data-toggle="modal" data-target="#logoutModal">Logout</a>*@
-                    </div>
-                </li>
-            </ul>
-        </nav>
-
-        <div id="wrapper">
-            <ul class="sidebar navbar-nav">
-                @if (User.IsInRole("User") || User.IsInRole("Organisation"))
+    <div style="display: flex;align-items: center;justify-content: space-between;" class="header">
+        <div style="display: flex;align-items: center;">
+            <a class="header-logo" href="/Home/Index"><img src="~/Content/img/logo-color.png" /> Росстат GRAPH</a>
+            <a style="font-weight: 100; font-size: 18px; margin-left: 30px;" class="nav-link" href="/Statistic/Index">Карта</a>
+            <a style="font-weight: 100; font-size: 18px;" class="nav-link" href="/Statistic/RealTime">Перепись</a>
+            @if (Request.IsAuthenticated)
+            {
+                <a style="font-weight: 100; font-size: 18px;" class="nav-link" href="/Statistic/Map">Учавствовать</a>
+                if (User.IsInRole("Administrator"))
                 {
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/Notification/Index">
-                            <i class="fas fa-fw fa-book"></i>
-                            <span>Уведомления</span>
-                        </a>
-                    </li>
+                    <a style="font-weight: 100; font-size: 18px;" class="nav-link" href="/Statistic/Map">Импортировать данные</a>
                 }
-                @if (User.IsInRole("User"))
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Claim/FormForCreateClaim">
-                            <i class="fas fa-fw  fa-calendar-plus"></i>
-                            <span>Оставить жалобу</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Claim/MarkedClaims">
-                            <i class="fas fa-fw fa-calendar"></i>
-                            <span>Избранные заявки</span>
-                        </a>
-                    </li>
-                }
-                @if (User.IsInRole("Organisation"))
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Claim/FormForAnswerClaim">
-                            <i class="fas fa-fw fa-calendar-check"></i>
-                            <span>Ответить на жалобу</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Claim/MarkedClaims">
-                            <i class="fas fa-fw fa-table"></i>
-                            <span>Поданые жалобы</span>
-                        </a>
-                    </li>
-                }
-                @if (User.IsInRole("Administrator"))
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Claim/AdministrationClaim">
-                            <i class="fas fa-fw fa-table"></i>
-                            <span>Просмотр жалоб</span>
-                        </a>
-                    </li>
-                }
+            }
+        </div>
+        <div class="text-right">
+            @if (Request.IsAuthenticated)
+            {
+                <a style="font-weight: 100; font-size: 18px;" class="nav-link" href="/Account/Logout">Выйти</a>
+            }
+            else
+            {
+                <a class="header-auth" href="/Account/Login"><i class="fa fa-user-circle" aria-hidden="true"></i> Войти</a>
+            }
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/Claim/Statistic">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Статистика</span>
-                    </a>
-                </li>
-            </ul>
-            <div id="content-wrapper">
-                <div class="container-fluid">
-                    @RenderBody()
-                </div>
-            </div>
-
-            <!-- /.content-wrapper -->
 
         </div>
-        <!-- /#wrapper -->
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+    </div>
 
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    @RenderBody()
 
-        <script src="~/Scripts/sb-admin.js"></script>
-        <script>
-            $(document).ready(function () {
-                GetNotification();
-            });
-        </script>
-    }
-    else
-    {
+    <div class="footer">
+        © 2019 Разработано командой "Гермес" на хакатоне "Цифровой прорыв" г Казань
+    </div>
+    <script src="~/Content/js/popper.min.js"></script>
+    @*<script src="~/Scripts/bootstrap.bundle.js"></script>*@
+    @*<script src="~/Scripts/jquery.easing.1.3.js"></script>*@
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/Chart.js"></script>
+    <script src="~/Scripts/Common.js"></script>
+    <script src="~/Content/js/bootstrap-select.min.js"></script>
+    <script src="https://use.fontawesome.com/cfe8703894.js"></script>
+    <script src="~/Content/js/script.js"></script>
 
-        <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-            <div class="container">
-                @Html.ActionLink("The Hermes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item no-arrow mx-1">
-                        @Html.ActionLink("Регистрация", "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink", @class = "simple-ref"})
-                    </li>
-                    <li class="nav-item no-arrow mx-1">
-                        @Html.ActionLink("Авторизация", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink", @class = "simple-ref"})
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div id="wrapper">
-            <div id="content-wrapper">
-                <div class="container body-content">
-                    @RenderBody()
-                </div>
-            </div>
-        </div>
-
-    }
 </body>
+
 </html>

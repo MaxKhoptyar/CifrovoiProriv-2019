@@ -1,0 +1,10 @@
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\bin\Release\TheHermesEntities.dll.config
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\bin\Release\TheHermesEntities.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\bin\Release\TheHermesEntities.pdb
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\bin\Release\EntityFramework.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\bin\Release\EntityFramework.SqlServer.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\bin\Release\EntityFramework.xml
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\bin\Release\EntityFramework.SqlServer.xml
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\obj\Release\TheHermesEntities.dll
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\obj\Release\TheHermesEntities.pdb
+C:\Git\GitHub\CifrovoiProriv\TheHermes\TheHermesEntities\obj\Release\TheHermesEntities.csprojResolveAssemblyReference.cache

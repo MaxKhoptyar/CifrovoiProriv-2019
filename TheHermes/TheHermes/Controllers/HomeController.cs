@@ -13,7 +13,7 @@ namespace TheHermes.Controllers
         public ActionResult Index()
         {
             DbAccountWorker.AddStartData();
-            DbOrganisationWorker.AddStartData();
+            //DbOrganisationWorker.AddStartData();
             return View();
         }
 

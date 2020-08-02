@@ -10,7 +10,6 @@ namespace TheHermes.Models
     {
         public int ChildrenCount { get; set; }
         public int Age { get; set; }
-        public List<OrganisationInfo> ListOrganisation { get; set; }
         public Guid SelectedOrganisation { get; set; }
     }
 }

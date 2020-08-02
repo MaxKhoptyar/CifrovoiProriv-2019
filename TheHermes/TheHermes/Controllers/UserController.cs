@@ -13,26 +13,6 @@ namespace TheHermes.Controllers
 {
     public class UserController : BaseController
     {
-        public ActionResult GetUserInfo()
-        {
-            var token = Request.GetToken();
-            var user = DbAccountWorker.GetUserByToken(token);
-            var personalData = DbUserWorker.GetUserInfo(user.Guid);
-            var listOrganisation = DbOrganisationWorker.GetAllOrganisation();
-            var model = new UserInfoModel();
-            model.ListOrganisation = listOrganisation;
-
-            if (personalData == null)
-            {
-                return View("UserInfo", model);
-            }
-
-            model.Age = personalData.Age;
-            model.ChildrenCount = personalData.ChildrenCount;
-            model.SelectedOrganisation = personalData.OrganisationGuid;
-            return View("UserInfo", model);
-        }
-
         public JsonResult UpdateUserInfo(UserInfoModel model)
         {
             var token = Request.GetToken();

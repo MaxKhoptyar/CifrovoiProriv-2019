@@ -14,8 +14,8 @@ namespace TheHermesEntities.Common
         [Description("Пользователь")]
         User = 1,
 
-        [Description("Организация ЖКХ")]
-        Organisation = 2,
+        [Description("Продвинутый пользователь")]
+        AdvancedUser = 2,
 
         [Description("Администратор портала")]
         Administrator = 3

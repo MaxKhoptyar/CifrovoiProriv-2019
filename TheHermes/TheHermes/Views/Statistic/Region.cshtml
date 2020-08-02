@@ -1,0 +1,133 @@
+﻿@using TheHermes.Models
+@model RegionModel
+
+<div class="bread">
+    <a href="/xakaton.html" class="b-link act">Общая статистика РФ</a>
+    <span class="b-ico">></span>
+    <a class="b-link deact">@Model.Name</a>
+</div>
+
+<div class="page-title"><h2>@Model.Name. Визуализация результатов переписи населения</h2></div>
+<div class="row top-region-stat">
+    <div class="col">
+        <div class="metr-item">
+            <div class="metr-item--title">Численность населения</div>
+            <div style="font-size: 42px;" class="metr-item--count">11 503 501 <span style="font-size: 18px;">чел.</span></div>
+            @*<div class="metr-item--text">прошли перепись населения в 2010 году</div>
+                *@
+        </div>
+        <div class="metr-item mt100">
+            <div class="metr-item--title">Показатель 4</div>
+            <div class="metr-item--text">Текст с описанием</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="metr-item">
+            <div class="metr-item--title">Высшее образование</div>
+
+                  <div class="metr-item--text">Текст с описанием</div>
+        </div>
+        <div class="metr-item mt100">
+            <div class="metr-item--title">Среднее образование</div>
+            <div class="metr-item--text">Текст с описанием</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="metr-item">
+            <div class="metr-item--title">Сельское население</div>
+            <div class="metr-item--text">Текст с описанием</div>
+        </div>
+        <div class="metr-item mt100">
+            <div class="metr-item--title">Городское население</div>
+            <div class="metr-item--text">Текст с описанием</div>
+        </div>
+    </div>
+</div>
+
+<div class="hak-content">
+
+    <div class="reg-graph">
+        <div class="graph-title">Образование в Республике Татарстан</div>
+        <canvas height="100px" id="gr1"></canvas>
+    </div>
+    <div class="reg-graph">
+        <div class="graph-title">Семейное положение жителей Республики Татарстан</div>
+        <canvas height="100px" id="gr2"></canvas>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        var ctx = document.getElementById('gr1').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['До 15 лет', '15-19 лет', '20-24 лет', '25-29 лет', '30-39 лет', '40-49 лет', '50-59 лет', '60-69 лет', 'Выше 70 лет'],
+                datasets: [{
+                    label: 'Начальное образование',
+                    backgroundColor: '#d73027',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [18, 14, 15, 20, 25, 31, 37, 28, 22, 1]
+                },
+                {
+                    label: 'Среднее образование',
+                    backgroundColor: '#fee08b',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [11, 10, 5, 2, 20, 30, 35, 35, 35, 1]
+                },
+                {
+                    label: 'Высшее образование',
+                    backgroundColor: '#1a9850',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [19, 13, 15, 12, 26, 34, 32, 33, 45, 1]
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'bottom',
+                    strokeStyle: '#ffffff00'
+                },
+                animation: {
+                    duration: '3000'
+                }
+            }
+        });
+
+
+        var ctx = document.getElementById('gr2').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['До 15 лет', '15-19 лет', '20-24 лет', '25-29 лет', '30-39 лет', '40-49 лет', '50-59 лет', '60-69 лет', 'Выше 70 лет'],
+                datasets: [{
+                    label: 'Разведены',
+                    backgroundColor: '#d73027',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [18, 14, 15, 20, 25, 31, 37, 28, 22, 1]
+                },
+                {
+                    label: 'Не были в браке',
+                    backgroundColor: '#fee08b',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [11, 10, 5, 2, 20, 30, 35, 35, 35, 1]
+                },
+                {
+                    label: 'В браке',
+                    backgroundColor: '#1a9850',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [19, 13, 15, 12, 26, 34, 32, 33, 45, 1]
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'bottom',
+                    strokeStyle: '#ffffff00'
+                },
+                animation: {
+                    duration: '3000'
+                }
+            }
+        });
+    });
+</script>
