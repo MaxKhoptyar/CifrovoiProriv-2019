@@ -1,0 +1,54 @@
+﻿@model TheHermes.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Регистрация";
+}
+<div class="container body-content">
+    <div class="row">
+        <div class="col-6 ver-center">
+            <div class="auth-image">
+                <img src="~/Content/img/map-def.png" alt="">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <h2>Регистрация.</h2>
+                    <h4>Создание нового аккаунта</h4>
+                    <hr>
+                </div>
+
+                <form action="/Account/Register" class="form-horizontal" method="post" role="form">
+                    <input name="__RequestVerificationToken" type="hidden" value="RM2jjetdQ6gQO7YsRVcyw_I8ziFTI9yjwjrAaTXemWaOQrg_ThORxMLvwPHMQ-QDPlLHCtI_2y23VUEfJ0N_D2iLg29SPKm7W8YLUKxkovM1">
+                    <div class="validation-summary-valid text-danger" data-valmsg-summary="true">
+                        <ul>
+                            <li style="display:none"></li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="col control-label" for="Email">Логин</label>
+                        <div class="col-md-12">
+                            <input class="form-control" data-val="true" data-val-required="Требуется поле Логин." id="Email" name="Email" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col control-label" for="Password">Пароль</label>
+                        <div class="col-md-12">
+                            <input class="form-control" data-val="true" data-val-length="The Пароль must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="Требуется поле Пароль." id="Password" name="Password" type="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col control-label" for="ConfirmPassword">Подтверждение пароля</label>
+                        <div class="col-md-12">
+                            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" type="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button type="submit" class="btn btn-outline-dark">Регистрация</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
